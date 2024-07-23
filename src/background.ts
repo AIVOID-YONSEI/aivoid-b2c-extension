@@ -2,14 +2,14 @@ let loader: number;
 
 function init() {
   if (window.location.href.startsWith('https://www.youtube.com/watch')) {
-    chrome.runtime.sendMessage({
+    window.postMessage({
       type: 'YOUTUBE',
     });
     if (loader) {
       clearInterval(loader);
     }
   } else if (window.location.href.startsWith('https://vibe.naver.com/')) {
-    chrome.runtime.sendMessage({
+    window.postMessage({
       type: 'VIBE',
     });
     if (loader) {

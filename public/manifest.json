@@ -18,18 +18,18 @@
     "service_worker": "js/background.js"
   },
 
-  "permissions": ["storage"],
+  "permissions": ["storage", "tabs"],
 
   "host_permissions": ["https://www.youtube.com/", "https://vibe.naver.com/"],
 
   "content_scripts": [
     {
       "matches": ["https://www.youtube.com/*"],
-      "js": ["js/background.js", "js/vendor.js"]
+      "js": ["js/background.js", "js/vendor.js", "js/content_script.js"]
     },
     {
       "matches": ["https://vibe.naver.com/*"],
-      "js": ["js/background.js", "js/vendor.js"]
+      "js": ["js/background.js", "js/vendor.js", "js/content_script.js"]
     }
   ]
 }
